@@ -6,9 +6,8 @@ using namespace std;
 class Elementy{
 public:
 
-	void Wczytaj(int tab[], int ilosc, const char * nazwa);
-	void wyswietl(int tab[], int ilosc);
-	void mnozenie(int tab_1[], int tab_2[], int ilosc);
+	void wczytaj(int tab[], int n, const char * nazwa);
+	void wyswietl(int tab[], int n);
 	int operator = (int tab_1);
 
 

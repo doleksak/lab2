@@ -12,23 +12,38 @@ using namespace std;
  */
 class tablica {
 	
-	int ilosc;
-	int ilosc_pocz;
-	int *tab_1;	
+	int n;
+	int m;  //liczba argumentow w pliku
+	int *tab;	
 	const char * nazwa;
 	fstream plik;
 
-	int elementy(const char * name);
+	int rozmiar(const char * name);
 	
 	public:
 	void wypelnij();
 	void wyswietl();
-	void mnozenie();
+	void operacja();
+	
+	void zamien_elementy(int i, int j);
+	void odwroc_tablice();	
+	void dodaj_element(int e);
+	void dodaj_elementy(tablica& tab);
+	bool operator ==(tablica& Arg2);
+	tablica& operator+(tablica& tab2);
 	tablica& operator=(tablica& tab2);
 
-	tablica(const char * name) {nazwa=name, ilosc_pocz=elementy(nazwa), ilosc=ilosc_pocz, tab_1=new int [ilosc];}
-	tablica() {nazwa="tablica", ilosc_pocz=elementy(nazwa), ilosc=ilosc_pocz, tab_1=new int [ilosc];}
-	~tablica() {delete [] tab_1;}
+	/*!
+ * \brief Konstruktory klasy tablica
+ *
+ * Konstruktor inicjalizuje poczatkowe wartosci parametrow.
+ *
+ * \param nazwa - nazwa pliku
+ * \param n 	- ilosc argumentow w tablicy
+ */
+	tablica(const char * name) {nazwa=name, m=rozmiar(nazwa), n=m, tab=new int [n];}
+	tablica() {nazwa="liczby.txt", m=rozmiar(nazwa), n=m, tab=new int [n];}
+	~tablica() {delete [] tab;}
 };
 
 #endif

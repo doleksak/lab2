@@ -5,22 +5,20 @@
 using namespace std;
 
 
-void Wczytaj(int tab[], int ilosc, const char * nazwa)
+void wczytaj(int tab[], int n, const char * nazwa)
 {
 fstream plik(nazwa);
-plik.ignore(1000,'\n');
-for (int i=0; i<ilosc; i++)
+for (int i=0; i<n; i++)
 plik>>tab[i];
 }
 
-void wyswietl(int tab[], int ilosc)
+void wyswietl(int tab[], int n)
 {
-for(int i=0; i<ilosc; i++) { cout<<tab[i]<<" "; }
+for(int i=0; i<n; i++) { cout<<tab[i]<<" "; }
 }
 
-void mnozenie(int tab_1[], int tab_2[], int ilosc) {
-for(int i=0; i<ilosc; i++) { tab_2[i]=2*tab_1[i]; }
-}
+
+
 
 
 
