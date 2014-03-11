@@ -15,13 +15,19 @@ class tablica {
 	const char * nazwa;
 	fstream plik;
 
-	int rozmiar(const char * name);
+	int rozmiar(const char * plik);
 	
 	public:
 	void wypelnij();
 	void wyswietl();
 	void operacja();
 	void porownaj(tablica& Arg);
+	/**********************************************************************************/
+	void zamien_elementy(int i, int j);
+	void odwroc_tablice();	
+	void dodaj_element(int e);
+	void dodaj_elementy(tablica& tab);
+	tablica& operator=(tablica& tab2);
 
 	/*!
  * \brief Konstruktory klasy tablica
@@ -29,10 +35,9 @@ class tablica {
  * Konstruktor inicjalizuje poczatkowe wartosci parametrow.
  *
  * \param nazwa - nazwa pliku
- * \param n 	- ilosc argumentow w tablicy
+ * \param n,m 	- ilosc argumentow w tablicy
  */
-	tablica(const char * name) {nazwa=name, m=rozmiar(nazwa), n=m, tab=new int [n];}
-	tablica() {nazwa="liczby.txt", m=rozmiar(nazwa), n=m, tab=new int [n];}
+	tablica(const char * plik) {nazwa=plik, m=rozmiar(nazwa), n=m, tab=new int [m];}
 	~tablica() {delete [] tab;}
 };
 
