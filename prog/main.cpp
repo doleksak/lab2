@@ -48,6 +48,7 @@ sprawdz.porownaj(wejsciowa);
   str.close();
 
 Elementy lista;
+
 lista.wczytaj();
 lista.dodaj_elem();
 lista.wyswietl();

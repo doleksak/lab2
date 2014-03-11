@@ -32,5 +32,15 @@ void Elementy::dodaj_elem()
 	lista.push_front(i);
 	}
      
-
-
+/*bool Elementy::operator==(Elementy lista)
+{
+	int j, k;
+	j=lista.size();
+	k=lista2.size();
+if (j!=k)
+{
+	return false;
+}
+	return true;
+} 
+*/
