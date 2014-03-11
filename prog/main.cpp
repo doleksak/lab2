@@ -49,6 +49,7 @@ sprawdz.porownaj(wejsciowa);
 
 Elementy lista;
 lista.wczytaj();
+lista.dodaj_elem();
 lista.wyswietl();
 return 0;
 }

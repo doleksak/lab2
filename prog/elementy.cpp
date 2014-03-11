@@ -25,3 +25,12 @@ void Elementy::wyswietl()
      
 }
 
+void Elementy::dodaj_elem()
+{  	int i;
+	cout<<"podaj argument:"<<endl;
+	cin>>i;
+	lista.push_front(i);
+	}
+     
+
+
