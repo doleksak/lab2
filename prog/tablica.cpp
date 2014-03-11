@@ -2,8 +2,15 @@
 
 using namespace std;
 
+/*!
+ * \file
+ * \brief Definicje metod klasy tablica
+ *
+ */
 
-
+/*! \brief Sprawdza liczbe argumentow pliku
+ * 
+ */
 
 int tablica::rozmiar(const char * name) 
 {
@@ -13,17 +20,23 @@ int tablica::rozmiar(const char * name)
 		
 }
 
+/*! \brief Wykonuje operacje mnozenia
+ * 
+ */
+
+void tablica::operacja() 
+{
+for(int i=0; i<n; i++) 
+	{ tab[i] *= 2; }
+}
+
+/*! \brief Otwiera plik, pomija pierwsza wartosc i zapisuje elemety do tablicy
+ * 
+ */
 
 
-
-
-void tablica::operacja() {
-for(int i=0; i<n; i++) { tab[i] *= 2; }}
-
-
-
-
-void tablica::wypelnij() {
+void tablica::wypelnij() 
+	{
 	plik.open(nazwa);
 	plik.ignore(256,'\n');
 	for (int i=0; i<n; i++)
@@ -31,12 +44,20 @@ void tablica::wypelnij() {
 	plik.close();
 	}
 
+/*! \brief Wyswietla tablice
+ * 
+ */
 
-void tablica::wyswietl() {
+void tablica::wyswietl() 
+	{
 	for(int i=0; i<n; i++) { cout<<tab[i]<<" "; }
 	cout<<endl;
 	}
 
+
+/*! \brief Funkcja sprawdza czy tablice maja jednakowy rozmiar, wypisuje blad jesli tak nie jest
+ * 
+ */
 
 void tablica::porownaj(tablica &tab2)
   {
@@ -53,31 +74,38 @@ void tablica::porownaj(tablica &tab2)
   }
 /*****************************************************/
 
+/*! \brief Zamienia elementy(elem 1 to indeks 0)
+ * 
+ */
 
-void tablica::zamien_elementy(int i, int j) {
-	int T=tab[i];
+void tablica::zamien_elementy(int i, int j) 
+	{
+	int T;
+	T=tab[i];
 	tab[i]=tab[j];
 	tab[j]=T;
 	}
 
-	void tablica::odwroc_tablice() 
-	{
-	int poczatek = 0;
-	int koniec = n-1;
+/*! \brief Uzywa funkcji zamien_elementy do odwrocenia calej tablicy
+ * 
+ */
 
-	while (poczatek < koniec) 
-	{
-		int T = tab[poczatek];
-		tab[poczatek]  = tab[koniec];
-		tab[koniec] = T;
-	poczatek++;
-	koniec--;
+	void tablica::odwroc_tablice() 
+	
+{
+  for (int i=0; i<n/2; i++)	
+  	{
+	  zamien_elementy(i, n-1-i);
 	}
 }
 
+/*! \brief Dodaje nowy element poprzez utworzenie
+ * 	pomocniczej, dynamicznej tablicy, zwiekszenie poprzedniej,
+ *  przepisanie do niej pomocniczej i dodanie nowego elementu na koniec
+ */
 
 void tablica::dodaj_element(int e) 
-{
+	{
 	int *T = new int [n]; 		
 	for(int i=0; i<n; i++)
         T[i]=tab[i];  			
@@ -89,6 +117,9 @@ void tablica::dodaj_element(int e)
 	n++;
 	}
 
+/*! \brief Dodaje kilka elementow, wykorzystujac funkce dodaj_element
+ * 
+ */
 
 	void tablica::dodaj_elementy(tablica &tab) 
 	{	
@@ -97,6 +128,10 @@ void tablica::dodaj_element(int e)
 		tablica::dodaj_element(tab.tab[i]);
 		}
 	}
+
+/*! \brief Przeladowanie operatora porownania
+ * 
+ */
 
 	tablica& tablica::operator= (tablica & tab2) 
   {

@@ -7,6 +7,17 @@
 using namespace std;
 
 
+/*!
+ * \file
+ * \brief Definicje funkcji klasy Elementy
+ *
+ */
+
+
+/*! \brief Pozwala na podanie argumentow z klawiatury i dodanie ich na liste
+ * 
+ */
+
 void Elementy::wczytaj()
 {
 	
@@ -16,6 +27,10 @@ while(cin>>elem && elem != 0)
 	lista.push_back(elem);
 }
 
+/*! \brief Wyswietla liste
+ * 
+ */
+
 void Elementy::wyswietl()
 {  cout<<"Twoje elementy:"<<endl;
 	for( list<int>::iterator iter=lista.begin(); iter != lista.end();){
@@ -24,6 +39,10 @@ void Elementy::wyswietl()
 	}
      
 }
+
+/*! \brief Dodaje elementy do listy
+ * 
+ */
 
 void Elementy::dodaj_elem()
 {  	int i;

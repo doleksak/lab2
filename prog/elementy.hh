@@ -4,6 +4,12 @@
 #include <list>
 using namespace std;
 
+/*! 
+ *	\file
+ *	\brief Definicja klasy Elementy i jej funkcji
+ * 
+ */
+
 class Elementy{
 public:
 	list<int> lista;

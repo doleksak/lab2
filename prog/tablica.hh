@@ -5,6 +5,10 @@
 #include <cstdlib>
 using namespace std;
 
+/*!
+ * \file
+ * \brief Definiuje klase tablica i jej metody
+ */
 
 class tablica {
 	
@@ -23,7 +27,7 @@ class tablica {
 	void operacja();
 	void porownaj(tablica& Arg);
 	/**********************************************************************************/
-	void zamien_elementy(int i, int j);
+	void zamien_elementy(int i, int j); /* 0 jest 1 elem*/
 	void odwroc_tablice();	
 	void dodaj_element(int e);
 	void dodaj_elementy(tablica& tab);
