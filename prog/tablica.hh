@@ -12,19 +12,17 @@ using namespace std;
 
 class tablica {
 	
-	int n;
-	int m;  //liczba argumentow w pliku
+	int n, m; //liczba argumentow w pliku
 	int *tab;
 	int *tabspr;	
-	const char * nazwa;
 	fstream plik;
-
+	const char * nazwa;
 	int rozmiar(const char * plik);
 	
 	public:
-	void wypelnij();
 	void wyswietl();
 	void operacja();
+	void wypelnij();
 	void porownaj(tablica& Arg);
 	/**********************************************************************************/
 	void zamien_elementy(int i, int j); /* 0 jest 1 elem*/

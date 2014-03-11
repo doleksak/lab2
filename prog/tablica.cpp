@@ -4,7 +4,7 @@ using namespace std;
 
 /*!
  * \file
- * \brief Definicje metod klasy tablica
+ * \brief Metody klasy tablica
  *
  */
 
