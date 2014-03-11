@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <sys/time.h>
 #include <cstdlib>
 #include "tablica.hh"
 #include "elementy.hh"
