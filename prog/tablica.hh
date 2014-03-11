@@ -5,16 +5,13 @@
 #include <cstdlib>
 using namespace std;
 
-/*!
- * \file
- * \brief Definicja klasy tablica
- *
- */
+
 class tablica {
 	
 	int n;
 	int m;  //liczba argumentow w pliku
-	int *tab;	
+	int *tab;
+	int *tabspr;	
 	const char * nazwa;
 	fstream plik;
 
@@ -24,14 +21,7 @@ class tablica {
 	void wypelnij();
 	void wyswietl();
 	void operacja();
-	
-	void zamien_elementy(int i, int j);
-	void odwroc_tablice();	
-	void dodaj_element(int e);
-	void dodaj_elementy(tablica& tab);
-	bool operator ==(tablica& Arg2);
-	tablica& operator+(tablica& tab2);
-	tablica& operator=(tablica& tab2);
+	void porownaj(tablica& Arg);
 
 	/*!
  * \brief Konstruktory klasy tablica

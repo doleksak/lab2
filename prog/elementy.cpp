@@ -1,27 +1,27 @@
 #include "elementy.hh"
+#include "tablica.hh"
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
+#include <list>
 using namespace std;
 
 
-void wczytaj(int tab[], int n, const char * nazwa)
+void Elementy::wczytaj()
 {
-fstream plik(nazwa);
-for (int i=0; i<n; i++)
-plik>>tab[i];
+	
+	int elem;
+	cout<<"Podaj elementy, wpisz 0 by zakonczyc:"<<endl;
+while(cin>>elem && elem != 0)
+	lista.push_back(elem);
 }
 
-void wyswietl(int tab[], int n)
-{
-for(int i=0; i<n; i++) { cout<<tab[i]<<" "; }
+void Elementy::wyswietl()
+{  cout<<"Twoje elementy:"<<endl;
+	for( list<int>::iterator iter=lista.begin(); iter != lista.end();){
+		cout<<*iter<<endl;
+         iter++;
+	}
+     
 }
-
-
-
-
-
-
-
-
 

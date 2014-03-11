@@ -7,10 +7,7 @@
 #include <ctime>
 using namespace std;
 
-/*! \file Glowny plik programu
- *
- * Wywolanie funkcji main testuje wszystkie funkcje i przeciazenia zawarte w programie
- */
+
 int main() {
 	int powtorz=0;  /*liczba powtorzen operacji*/
 	clock_t t1, t2; /*stale czasu*/
@@ -28,17 +25,21 @@ sprawdz.wypelnij();
 cout<<endl;	
 sprawdz.wyswietl();
 
+
+
 t1=clock();
 for (int i = 0; i < powtorz; i++)
 {
+wejsciowa.wypelnij();
 
 wejsciowa.operacja();
-
 }
-t2=clock(); 
+
+t2=clock();
 czas=t2-t1; 
 cout<<"czas:"<<czas<<endl;    /*podanie czasu na wyjsciu*/
 
+sprawdz.porownaj(wejsciowa);
 
 
   ofstream str;
@@ -46,7 +47,8 @@ cout<<"czas:"<<czas<<endl;    /*podanie czasu na wyjsciu*/
   str << "Czas: " << czas << endl;  
   str.close();
 
-
-
+Elementy lista;
+lista.wczytaj();
+lista.wyswietl();
 return 0;
 }
